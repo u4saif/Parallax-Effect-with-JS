@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect on Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="zoom">
+        <img src="./mountain1.png" alt="mountain1" id="layer1">
+        <img src="./mountain2.png" alt="mountain2" id="layer2">
+        <img src="./text4.png" alt="text" id="text1">
+
+    </section>
+
+<section class="content">
+    <h2>Parallax scrolling effect using CSS. </h2>
+    <p>
+Parallax is a 3d effect used in various websites to make webpages attractive.
+<br>In this effect, as we scroll, the background of the webpages moves at different 
+<br>speed than the foreground making it look brilliant to the eyes.
+</p>
+<h2>Examples:</h2>
+<p>
+These websites show the parallax effect brilliantly-
+<br>
+<ul> <li>Firewatchgame</li>  
+<li>Gardenstudio</li> 
+<li>alquimiawrg</li> 
+</ul>
+</p>
+<p>
+This effect is a great visual but an easy method to implement with the help of CSS.
+First, let us understand what is happening in the given examples.
+The effect is created because the image in the background is kept fixed with no movement 
+but other images are moving . This simple technique makes this effect look brilliant.
+Now let us see the implementation of this effect using CSS-
+</p>
+</section>
+</body>
+<script type="text/javascript">
+    let layer1=document.getElementById("layer1");
+    scroll=window.pageYOffset;
+    document.addEventListener('scroll',function(e){
+        var offset=window.pageYOffset;
+        scroll=offset;
+        layer1.style.width=(100+scroll/5)+'%';
+    });
+    let layer2=document.getElementById("layer2");
+    scroll=window.pageYOffset;
+    document.addEventListener('scroll',function(e){
+        var offset=window.pageYOffset;
+        scroll=offset;
+        layer2.style.width=(100+scroll/5)+'%';
+        layer2.style.left=(scroll/50)+'%';
+    });
+    let text1=document.getElementById("text1");
+    scroll=window.pageYOffset;
+    document.addEventListener('scroll',function(e){
+        var offset=window.pageYOffset;
+        scroll=offset;
+        layer1.style.width=(100+scroll/5)+'%';
+        text1.style.top= - scroll/10 +'%';
+    });
+
+</script>
+</html>
